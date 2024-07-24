@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: hello-world-app-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Forge app for Jessie
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/53e63822-218b-4d28-b711-368700fbeb54
+permissions:
+  scopes:
+    - read:jira-work
